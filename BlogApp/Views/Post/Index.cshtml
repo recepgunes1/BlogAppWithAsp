@@ -1,0 +1,24 @@
+﻿@using BlogApp;
+@model IEnumerable<BlogApp.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @if (Model.Any())
+    {
+        @foreach (var post in Model)
+        {
+            <article class="card border-info mb-3">
+                <h2 class="card-header">@post.Title</h2>
+                <div class="card-body">
+                    <p>@post.Content?.GetFirst50Char()</p>
+                    @Html.ActionLink("Read More", "Detail", "Post", new {id = post.Id}, new {@class = "btn btn-danger me-3"})
+                    @Html.ActionLink("Update Post", "Update", "Post", new {id = post.Id}, new {@class = "btn btn-info ms-3 me-3"})
+                    @Html.ActionLink("Delete Post", "Delete", "Post", new {id = post.Id}, new {@class = "btn btn-dark ms-3"})
+                </div>
+            </article>
+        }
+    }
+</div>

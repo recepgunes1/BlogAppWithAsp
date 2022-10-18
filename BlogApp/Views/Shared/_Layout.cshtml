@@ -1,0 +1,39 @@
+﻿<html lang="en">
+<head>
+    <title>@ViewBag.Title - BlogApp</title>
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/bootstrap.min.css" />
+    <script src="~/bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                @Html.ActionLink("BlogApp", "Index", "Post", null, new {@class="navbar-brand"})
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            @Html.ActionLink("Home", "Index", "Post", null, new {@class="nav-link"})
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Create New Post", "Create", "Post", null, new {@class="nav-link"})
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="m-5">
+        @RenderBody()
+    </main>
+    <footer>
+        <!-- footer-->
+    </footer>
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js"></script>

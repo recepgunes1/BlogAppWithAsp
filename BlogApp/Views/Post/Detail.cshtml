@@ -1,0 +1,13 @@
+﻿@model BlogApp.Models.Post;
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div class="m-5 p-5 text-break">
+    <h1>@Model.Title</h1>
+    <hr />
+    <p>@Model.Content</p>
+    <hr />
+    <p>@Model.CreatedDateTime.ToLongDateString()</p>
+
+</div>

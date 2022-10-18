@@ -1,0 +1,50 @@
+﻿@model BlogApp.Models.Post;
+@{
+    ViewBag.Title = "Update";
+}
+
+@using (Html.BeginForm("Update", "Post", FormMethod.Post))
+{
+    <div class="row mb-4">
+        <h1 class="">Update</h1>
+        <hr class="col-7" />
+    </div>
+    <div class="row form-group mb-3">
+        <div class="col-2">
+            @Html.LabelFor(p => p.Id, new {@class = "control-label fw-bolder"})
+        </div>
+        <div class="col-5">
+            @Html.TextBoxFor(p => p.Id, new { @class = "form-control", @disabled = "", @value = Model.Id })
+        </div>
+    </div>
+    <div class="row form-group mb-3">
+        <div class="col-2">
+            @Html.LabelFor(p => p.Title, new {@class = "control-label fw-bolder"})
+        </div>
+        <div class="col-5">
+            @Html.TextBoxFor(p => p.Title, new { @class = "form-control", @value = Model.Title} )
+        </div>
+    </div>
+    <div class="row form-group mb-3">
+        <div class="col-2">
+            @Html.LabelFor(p => p.Content, new {@class = "control-label fw-bolder"})
+        </div>
+        <div class="col-5">
+            @Html.TextAreaFor(p => p.Content, new { @class = "form-control",  @value = Model.Content} )
+        </div>
+    </div>
+    <div class="row form-group mb-3">
+        <div class="col-2">
+            @Html.LabelFor(p => p.CreatedDateTime, new {@class = "control-label fw-bolder text-wrap"})
+        </div>
+        <div class="col-5">
+            @Html.TextBoxFor(p => p.CreatedDateTime, new { @class = "form-control",  @value = Model.CreatedDateTime} )
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary" style="width: 100%">Update</button>
+        </div>
+    </div>
+    @Html.ValidationSummary(false, "", new {@class = "text-danger"})
+}
